@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { Form } from "react-bootstrap";
 
 const SideBar = (props) => {
   const [placesState, setPlaceState] = useState([
@@ -12,6 +13,32 @@ const SideBar = (props) => {
     { name: "Rome", value: { lat: "44.34", lon: "10.39", data: null } },
     { name: "Heidelberg", value: { lat: "49.39", lon: "8.6", data: null } },
   ]);
+  const [search, setSearch] = useState(null);
+
+  const searchCity = async (query) => {
+    let res = await fetch(
+      "http://api.openweathermap.org/geo/1.0/direct?limit=5&appid=c59f912abff58c2edc56054eb02dc08b&q=" +
+        query
+    );
+    if (res.ok) {
+      let data = await res.json();
+      console.log(data, "search result");
+      let currentState = placesState;
+      //   placesState.forEach((value, index) => {
+      //     if (value.name === place) {
+      //       placesState[index] = {
+      //         name: place,
+      //         value: {
+      //           lat: selectedPLace.value.lat,
+      //           lon: selectedPLace.value.lon,
+      //           data: data,
+      //         },
+      //       };
+      //     }
+      //   });
+    }
+  };
+
   const fetchWeather = () => {
     let places = ["Berlin", "Munich", "Rome", "Heidelberg"];
     places.forEach(async (place) => {
@@ -28,9 +55,9 @@ const SideBar = (props) => {
       if (res.ok) {
         let data = await res.json();
         let currentState = placesState;
-        placesState.forEach((value, index) => {
+        currentState.forEach((value, index) => {
           if (value.name === place) {
-            placesState[index] = {
+            currentState[index] = {
               name: place,
               value: {
                 lat: selectedPLace.value.lat,
@@ -48,10 +75,30 @@ const SideBar = (props) => {
   };
   useEffect(() => {
     fetchWeather();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [placesState]);
   return (
     <div className="colorSide">
+      <Form
+        className="mr-4 ml-n2"
+        onSubmit={(e) => {
+          e.preventDefault();
+          searchCity(search);
+        }}
+      >
+        <Form.Group controlId="formBasicPassword">
+          <Form.Control
+            type="text"
+            placeholder="search"
+            value={search}
+            onChange={(e) => {
+              e.preventDefault();
+              setSearch(e.target.value);
+            }}
+          />
+        </Form.Group>
+      </Form>
       <ul>
         {placesState.map((place, index) => {
           return (
