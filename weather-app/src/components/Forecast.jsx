@@ -13,8 +13,9 @@ const Forecast = (props) => {
         props.search.value.lat +
         "&lon=" +
         props.search.value.lon +
-        "&appid=c59f912abff58c2edc56054eb02dc08b"
+        "&appid=c59f912abff58c2edc56054eb02dc08b&units=metric"
     );
+    //data.weather[0].description
     if (res.ok) {
       let data = await res.json();
       setTemps(data.list.slice(0, 10));
@@ -42,18 +43,20 @@ const Forecast = (props) => {
           >
             <tbody>
               {temps.map((temp) => {
+                console.log(temp.weather, "weather");
                 return (
                   <tr>
                     <td>{temp.dt_txt.substring(11, 16)}</td>
                     <td className="text-white">
-                      {temp.weather.main === "clear" ? (
+                      {temp.weather[0].main !== "Clouds" ? (
                         <BsFillSunFill />
                       ) : (
                         <BsFillCloudDrizzleFill />
                       )}
                     </td>
                     <td>
-                      L:{temp.main.temp_min} H:{temp.main.temp_max}
+                      L:{Math.floor(temp.main.temp_min)} {"\xB0"} H:
+                      {Math.floor(temp.main.temp_max)} {"\xB0"}
                     </td>
                   </tr>
                 );

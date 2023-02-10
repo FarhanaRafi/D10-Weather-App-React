@@ -54,7 +54,7 @@ const SideBar = (props) => {
           selectedPLace.value.lat +
           "&lon=" +
           selectedPLace.value.lon +
-          "&appid=c59f912abff58c2edc56054eb02dc08b"
+          "&appid=c59f912abff58c2edc56054eb02dc08b&units=metric"
       );
       if (res.ok) {
         let data = await res.json();
