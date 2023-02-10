@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Table, Row, Col, Card } from "react-bootstrap";
+import { Table, Row, Col } from "react-bootstrap";
 import { BsFillSunFill, BsFillCloudDrizzleFill } from "react-icons/bs";
 
 const Forecast = (props) => {
@@ -39,11 +39,13 @@ const Forecast = (props) => {
           <Table
             hover
             className="text-white ml-4 mr-5"
-            style={{ backgroundColor: "rgb(37, 150, 190,0.6)" }}
+            style={{
+              backgroundColor: "rgb(37, 150, 190,0.6)",
+              borderRadius: "12px",
+            }}
           >
             <tbody>
               {temps.map((temp) => {
-                console.log(temp.weather, "weather");
                 return (
                   <tr>
                     <td>{temp.dt_txt.substring(11, 16)}</td>
@@ -80,7 +82,10 @@ const Forecast = (props) => {
               style={{ backgroundColor: "rgb(37, 150, 190,0.6)" }}
             >
               <p className="pt-3 para">Feels Like</p>
-              <h2> {place.value.data.main.feels_like}</h2>
+              <h2>
+                {" "}
+                {Math.floor(place.value.data.main.feels_like)} {"\xB0"}
+              </h2>
             </div>
           </Col>
         </Row>

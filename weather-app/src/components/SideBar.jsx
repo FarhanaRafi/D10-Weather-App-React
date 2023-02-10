@@ -38,6 +38,7 @@ const SideBar = (props) => {
       let currentPlaces = placesList;
       currentPlaces.push(query);
 
+      setPlacesList(currentPlaces);
       setPlaceState(currentState);
       fetchWeather();
     }
