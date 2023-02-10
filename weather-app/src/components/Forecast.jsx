@@ -9,12 +9,15 @@ const Forecast = (props) => {
   const [temps, setTemps] = useState([]);
   const fetchWeather = async () => {
     let res = await fetch(
-      "https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=c59f912abff58c2edc56054eb02dc08b"
+      "https://api.openweathermap.org/data/2.5/forecast?lat=" +
+        props.search.value.lat +
+        "&lon=" +
+        props.search.value.lon +
+        "&appid=c59f912abff58c2edc56054eb02dc08b"
     );
     if (res.ok) {
       let data = await res.json();
       setTemps(data.list.slice(0, 10));
-      console.log(data, "forecast");
     } else {
       console.error("something wrong");
     }
@@ -35,7 +38,7 @@ const Forecast = (props) => {
           <Table
             hover
             className="text-white ml-4 mr-5"
-            style={{ backgroundColor: "rgb(37, 150, 190,0.3)" }}
+            style={{ backgroundColor: "rgb(37, 150, 190,0.6)" }}
           >
             <tbody>
               {temps.map((temp) => {
@@ -62,7 +65,7 @@ const Forecast = (props) => {
           <Col xs={2}>
             <div
               className="text-white ml-4 box"
-              style={{ backgroundColor: "rgb(37, 150, 190,0.3)" }}
+              style={{ backgroundColor: "rgb(37, 150, 190,0.6)" }}
             >
               <p className="pt-3 para">Humidity</p>
               <h2> {place.value.data.main.humidity}%</h2>
@@ -71,7 +74,7 @@ const Forecast = (props) => {
           <Col xs={2}>
             <div
               className="text-white box1"
-              style={{ backgroundColor: "rgb(37, 150, 190,0.3)" }}
+              style={{ backgroundColor: "rgb(37, 150, 190,0.6)" }}
             >
               <p className="pt-3 para">Feels Like</p>
               <h2> {place.value.data.main.feels_like}</h2>

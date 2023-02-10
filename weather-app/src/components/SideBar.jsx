@@ -37,8 +37,8 @@ const SideBar = (props) => {
       });
       let currentPlaces = placesList;
       currentPlaces.push(query);
+
       setPlaceState(currentState);
-      console.log(placesState, "state");
       fetchWeather();
     }
   };
@@ -81,7 +81,7 @@ const SideBar = (props) => {
     fetchWeather();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [placesState]);
+  }, [placesState, placesList]);
   return (
     <div className="colorSide">
       <Form
