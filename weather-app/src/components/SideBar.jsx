@@ -115,12 +115,16 @@ const SideBar = (props) => {
               }}
             >
               <h6>{place.name}</h6>
-              <p>
-                <small>
-                  {" "}
-                  {new Date().getHours()}:{new Date().getMinutes()}
-                </small>
-              </p>
+              {place.value.data !== null ? (
+                <p className="mt-n1">
+                  <strong>
+                    {Math.floor(place.value.data.main.temp)}
+                    {"\xB0"}
+                  </strong>
+                </p>
+              ) : (
+                ""
+              )}
               {place.value.data !== null ? (
                 <p className="mt-n3">
                   <small>{place.value.data.weather[0].description}</small>
