@@ -38,7 +38,7 @@ const Main = (props) => {
               H:{place.value.data.main.temp_max}, L:
               {place.value.data.main.temp_min}
             </p>
-            <Forecast />
+            <Forecast search={place} />
           </>
         ) : (
           "Select a place from the sidebar"

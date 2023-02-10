@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Table, Row, Col } from "react-bootstrap";
+import { Table, Row, Col, Card } from "react-bootstrap";
 import { BsFillSunFill, BsFillCloudDrizzleFill } from "react-icons/bs";
 
 const Forecast = (props) => {
@@ -21,8 +21,8 @@ const Forecast = (props) => {
   };
 
   useEffect(() => {
-    console.log(props);
     fetchWeather();
+    setPlace(props.search);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.search]);
   //   const convertToCelsius = (f) => {
@@ -31,7 +31,7 @@ const Forecast = (props) => {
   return (
     <div className="forecast">
       <Row>
-        <Col xs={6}>
+        <Col xs={5}>
           <Table
             hover
             className="text-white ml-4 mr-5"
@@ -58,6 +58,26 @@ const Forecast = (props) => {
             </tbody>
           </Table>
         </Col>
+        <Row>
+          <Col xs={2}>
+            <div
+              className="text-white ml-4 box"
+              style={{ backgroundColor: "rgb(37, 150, 190,0.3)" }}
+            >
+              <p className="pt-3 para">Humidity</p>
+              <h2> {place.value.data.main.humidity}%</h2>
+            </div>
+          </Col>
+          <Col xs={2}>
+            <div
+              className="text-white box1"
+              style={{ backgroundColor: "rgb(37, 150, 190,0.3)" }}
+            >
+              <p className="pt-3 para">Feels Like</p>
+              <h2> {place.value.data.main.feels_like}</h2>
+            </div>
+          </Col>
+        </Row>
       </Row>
     </div>
   );

@@ -65,8 +65,29 @@
   margin-top: -5px;
 }
 .sideDiv:hover{
-background-color: grey;
+background-color: rgb(167, 164, 164);
 margin-right: 10px;
 border-radius: 10px;
 margin-left: -20px;
+}
+
+.box{
+  background-color: rgb(37, 150, 190,0.3);
+  border-radius: 20px;
+  height: 30%;
+  width: 150px;
+
+}
+.box1{
+  background-color: rgb(37, 150, 190,0.3);
+  border-radius: 20px;
+  height: 30%;
+  width: 150px;
+  margin-left: 130px;
+
+}
+
+
+.para{
+  color: gray;
 }
