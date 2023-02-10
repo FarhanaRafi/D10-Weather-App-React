@@ -2,6 +2,8 @@
 
 ##Made by Farhana
 
+![Screenshot](about.png)
+
 In the project directory, you can run:
 
 ### `npm start`
