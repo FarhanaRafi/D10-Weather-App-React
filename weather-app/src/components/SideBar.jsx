@@ -14,6 +14,12 @@ const SideBar = (props) => {
     { name: "Heidelberg", value: { lat: "49.39", lon: "8.6", data: null } },
   ]);
   const [search, setSearch] = useState(null);
+  const [placesList, setPlacesList] = useState([
+    "Berlin",
+    "Munich",
+    "Rome",
+    "Heidelberg",
+  ]);
 
   const searchCity = async (query) => {
     let res = await fetch(
@@ -24,23 +30,21 @@ const SideBar = (props) => {
       let data = await res.json();
       console.log(data, "search result");
       let currentState = placesState;
-      //   placesState.forEach((value, index) => {
-      //     if (value.name === place) {
-      //       placesState[index] = {
-      //         name: place,
-      //         value: {
-      //           lat: selectedPLace.value.lat,
-      //           lon: selectedPLace.value.lon,
-      //           data: data,
-      //         },
-      //       };
-      //     }
-      //   });
+
+      currentState.push({
+        name: query,
+        value: { lat: data[0].lat, lon: data[0].lon, data: null },
+      });
+      let currentPlaces = placesList;
+      currentPlaces.push(query);
+      setPlaceState(currentState);
+      console.log(placesState, "state");
+      fetchWeather();
     }
   };
 
   const fetchWeather = () => {
-    let places = ["Berlin", "Munich", "Rome", "Heidelberg"];
+    let places = placesList;
     places.forEach(async (place) => {
       let selectedPLace = placesState.filter(
         (place1) => place1.name === place
