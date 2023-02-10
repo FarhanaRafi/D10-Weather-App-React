@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  background-image: url("https://images5.alphacoders.com/384/384242.jpg");
+  color: white;
+ 
 }
 
 .App-logo {
@@ -35,4 +38,35 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.colorSide{
+  background-color: #31669a;
+  height: 100vh;
+  padding-top: 20px;
+  padding-left: 26px;
+  /* margin-left: -15px; */
+}
+
+.mainPage{
+  text-align: center; 
+  height: 100vh;
+  /* background-image: url("https://images5.alphacoders.com/384/384242.jpg"); */
+  object-fit: fill;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+}
+
+.horizontal{
+  border: 0.2px solid white;
+  margin-right: 30px;
+  margin-top: -5px;
+}
+.sideDiv:hover{
+background-color: grey;
+margin-right: 10px;
+border-radius: 10px;
+margin-left: -20px;
 }
