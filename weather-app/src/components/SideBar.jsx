@@ -2,21 +2,15 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 
-// const places = [
-//   { name: "Berlin", lat: "44.34", lon: "10.39", data: null },
-//   { name: "Munich", lat: "44.34", lon: "10.39", data: null },
-//   { name: "Rome", lat: "44.34", lon: "10.39", data: null },
-//   { name: "Rome", lat: "44.34", lon: "10.39", data: null },
-// ];
 const SideBar = (props) => {
   const [placesState, setPlaceState] = useState([
     {
       name: "Berlin",
-      value: { lat: "44.34", lon: "10.39", data: null },
+      value: { lat: "52.50", lon: "13.40", data: null },
     },
-    { name: "Munich", value: { lat: "44.34", lon: "10.39", data: null } },
+    { name: "Munich", value: { lat: "48.13", lon: "11.58", data: null } },
     { name: "Rome", value: { lat: "44.34", lon: "10.39", data: null } },
-    { name: "Heidelberg", value: { lat: "44.34", lon: "10.39", data: null } },
+    { name: "Heidelberg", value: { lat: "49.39", lon: "8.6", data: null } },
   ]);
   const fetchWeather = () => {
     let places = ["Berlin", "Munich", "Rome", "Heidelberg"];
