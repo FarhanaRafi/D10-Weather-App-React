@@ -32,7 +32,7 @@ const Forecast = (props) => {
   return (
     <div className="forecast">
       <Row>
-        <Col xs={5}>
+        <Col xs={6}>
           <Table
             hover
             className="text-white ml-4 mr-5"
