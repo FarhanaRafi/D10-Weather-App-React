@@ -37,7 +37,7 @@ const Main = (props) => {
             <Forecast search={place} />
           </>
         ) : (
-          "Select a place from the sidebar"
+          <h3 className="mt-5 ">Search and Select a place from the sidebar </h3>
         )}
       </div>
     </>

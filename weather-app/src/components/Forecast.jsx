@@ -29,9 +29,6 @@ const Forecast = (props) => {
     setPlace(props.search);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.search]);
-  //   const convertToCelsius = (f) => {
-  //     return (5 / 9) * (f - 32);
-  //   };
   return (
     <div className="forecast">
       <Row>
