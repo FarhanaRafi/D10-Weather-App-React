@@ -21,6 +21,8 @@ const SideBar = (props) => {
     "Heidelberg",
   ]);
 
+  const forceUpdate = React.useReducer((bool) => !bool)[1];
+
   const searchCity = async (query) => {
     let res = await fetch(
       "http://api.openweathermap.org/geo/1.0/direct?limit=5&appid=c59f912abff58c2edc56054eb02dc08b&q=" +
@@ -41,6 +43,7 @@ const SideBar = (props) => {
       setPlacesList(currentPlaces);
       setPlaceState(currentState);
       fetchWeather();
+      forceUpdate();
     }
   };
 
