@@ -2,9 +2,9 @@
 
 ##Made by Farhana
 #Day
-![Screenshot](screenshot.png)
+![Screenshot](../screenshot.png)
 #Night
-![Screenshot1](nightscreenshot.png)
+![Screenshot1](../nightscreenshot.png)
 
 In the project directory, you can run:
 
