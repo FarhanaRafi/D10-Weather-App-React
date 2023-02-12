@@ -41,7 +41,7 @@ const Forecast = (props) => {
   return (
     <div className="forecast">
       <Row className="mb-4">
-        <Col xs={2}>
+        <Col xs={6} md={4} lg={2} className="mt-3 mb-3">
           <div
             className="text-white ml-4 box"
             style={{ backgroundColor: "rgb(37, 150, 190,0.6)" }}
@@ -53,7 +53,7 @@ const Forecast = (props) => {
             <h2> {place.value.data.main.humidity}%</h2>
           </div>
         </Col>
-        <Col xs={2}>
+        <Col xs={6} md={4} lg={2} className="mt-3 mb-3">
           <div
             className="text-white ml-4 box"
             style={{ backgroundColor: "rgb(37, 150, 190,0.6)" }}
@@ -64,7 +64,7 @@ const Forecast = (props) => {
             <h2> {place.value.data.main.pressure}hPa</h2>
           </div>
         </Col>
-        <Col xs={2}>
+        <Col xs={6} md={4} lg={2} className="mt-3 mb-3">
           <div
             className="text-white ml-4 box"
             style={{ backgroundColor: "rgb(37, 150, 190,0.6)" }}
@@ -76,7 +76,7 @@ const Forecast = (props) => {
             <h2> {place.value.data.wind.speed}km/h</h2>
           </div>
         </Col>
-        <Col xs={2}>
+        <Col xs={6} md={4} lg={2} className="mt-3 mb-3">
           <div
             className="text-white ml-4 box"
             style={{ backgroundColor: "rgb(37, 150, 190,0.6)" }}
@@ -89,7 +89,7 @@ const Forecast = (props) => {
           </div>
         </Col>
 
-        <Col xs={2}>
+        <Col xs={6} md={4} lg={2} className="mr-n5 mt-3 mb-3">
           <div
             className="text-white box"
             style={{ backgroundColor: "rgb(37, 150, 190,0.6)" }}

@@ -8,7 +8,6 @@ const Home = () => {
   const [place, setPlace] = useState(null);
 
   const selectPlace = (place1) => {
-    console.log(place1, "sdfghj");
     setPlace(place1);
   };
 
