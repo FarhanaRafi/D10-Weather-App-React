@@ -1,4 +1,4 @@
-# Weather App using React, hooks, bootstrap using open weather APIs.
+# Apple Weather App clone using React, hooks, bootstrap using open weather APIs.
 
 ##Made by Farhana
 

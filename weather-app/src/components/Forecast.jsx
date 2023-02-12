@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Table, Row, Col } from "react-bootstrap";
 import { BsFillSunFill, BsFillCloudDrizzleFill } from "react-icons/bs";
+import { format } from "date-fns";
 
 const Forecast = (props) => {
   const [place, setPlace] = useState(props.search);
@@ -45,7 +46,11 @@ const Forecast = (props) => {
               {temps.map((temp) => {
                 return (
                   <tr>
-                    <td>{temp.dt_txt.substring(11, 16)}</td>
+                    {/* <td>{temp.dt_txt.substring(11, 16)}</td> */}
+                    <td>
+                      {format(new Date(temp.dt), "eeee").substring(0, 3)}{" "}
+                      {temp.dt_txt.substring(11, 16)}
+                    </td>
                     <td className="text-white">
                       {temp.weather[0].main !== "Clouds" ? (
                         <BsFillSunFill />
