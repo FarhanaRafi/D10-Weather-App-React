@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Table, Row, Col } from "react-bootstrap";
 import { BsFillSunFill, BsFillCloudDrizzleFill } from "react-icons/bs";
+import { CiTempHigh } from "react-icons/ci";
+import { WiHumidity } from "react-icons/wi";
 import { format } from "date-fns";
 
 const Forecast = (props) => {
@@ -33,7 +35,7 @@ const Forecast = (props) => {
   return (
     <div className="forecast">
       <Row>
-        <Col xs={6}>
+        <Col xs={10} md={10} lg={6}>
           <Table
             hover
             className="text-white ml-4 mr-5"
@@ -74,16 +76,23 @@ const Forecast = (props) => {
               className="text-white ml-4 box"
               style={{ backgroundColor: "rgb(37, 150, 190,0.6)" }}
             >
-              <p className="pt-3 para">Humidity</p>
+              <p className="pt-3 para">
+                <WiHumidity />
+                Humidity
+              </p>
               <h2> {place.value.data.main.humidity}%</h2>
             </div>
           </Col>
+
           <Col xs={2}>
             <div
               className="text-white box1"
               style={{ backgroundColor: "rgb(37, 150, 190,0.6)" }}
             >
-              <p className="pt-3 para">Feels Like</p>
+              <p className="pt-3 para">
+                <CiTempHigh />
+                Feels Like
+              </p>
               <h2>
                 {" "}
                 {Math.floor(place.value.data.main.feels_like)} {"\xB0"}
