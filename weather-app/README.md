@@ -1,8 +1,10 @@
 # Apple Weather App clone using React, hooks, bootstrap using open weather APIs.
 
 ##Made by Farhana
-
-![Screenshot](about.png)
+#Day
+![Screenshot](../screenshot.png)
+#Night
+![Screenshot1](../nightscreenshot.png)
 
 In the project directory, you can run:
 
