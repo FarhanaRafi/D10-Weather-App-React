@@ -50,7 +50,7 @@
 
 .mainPage{
   text-align: center; 
-  height: 100vh;
+  height: 100%;
   /* background-image: url("https://images5.alphacoders.com/384/384242.jpg"); */
   object-fit: fill;
   width: 100%;
@@ -78,14 +78,14 @@ margin-left: -20px;
   width: 150px;
 
 }
-.box1{
+/* .box1{
   background-color: rgb(37, 150, 190,0.3);
   border-radius: 20px;
   height: 150px;
   width: 150px;
   margin-left: 130px;
 
-}
+} */
 
 
 .para{
