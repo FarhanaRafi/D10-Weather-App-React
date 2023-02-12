@@ -4,7 +4,7 @@
 #Day
 ![Screenshot](screenshot.png)
 #Night
-![Screenshot](nightscreenshot.png)
+![Screenshot1](nightscreenshot.png)
 
 In the project directory, you can run:
 
